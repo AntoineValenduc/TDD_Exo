@@ -56,11 +56,6 @@ public class ShopTest {
     @Test
     public void whenMethodUpdate_thenQualityAnsSellInNeverNegativ() {
 
-         /*
-        Exception : NotBeNegative ????
-        If/While ????
-         */
-
         //Arrange
         shop = new Shop();
         product = new Product("dessert", "cookie", 0, 0);
@@ -82,14 +77,9 @@ public class ShopTest {
     @Test
     public void whenMethodUpdate_thenQualityNeverUpper50() {
 
-        /*
-        Exception NotUpperThan50 ????
-        Remplacer > 50 par 50 ????
-         */
-
         //Arrange
         shop = new Shop();
-        product = new Product("dessert", "cookie", 0, 51);
+        product = new Product("dessert", "cookie", 0, 52);
 
         //Act
         shop.update(product);
