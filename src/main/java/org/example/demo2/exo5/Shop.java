@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.demo2.exo5.exceptions.NotImplementedException;
 
 import java.util.List;
 
@@ -16,8 +15,17 @@ public class Shop {
     private List<Product> products;
 
     public void update(Product product) {
-        product.setQuality(product.getQuality() - 1);
-        product.setSellIn(product.getSellIn() - 1);
+
+        int oldQuality = product.getQuality();
+        int oldSellIn = product.getSellIn();
+
+        if (product.getSellIn() == 0){
+            product.setQuality(oldQuality - 2);
+        } else {
+            product.setQuality(oldQuality - 1);
+            product.setSellIn(oldSellIn - 1);
+        }
+
     }
 
 }
